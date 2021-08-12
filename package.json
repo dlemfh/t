@@ -15,6 +15,6 @@
     "test:local": "npm run now | node index.js"
   },
   "devDependencies": {
-    "@types/node": "^16.6.0"
+    "@types/node": "^14.17.1"
   }
 }
