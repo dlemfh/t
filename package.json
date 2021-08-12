@@ -10,7 +10,7 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "docker run --rm node:14 bash -c 'echo hello | npx github:dlemfh/t'"
   },
   "devDependencies": {
     "@types/node": "^16.6.0"
