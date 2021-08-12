@@ -10,7 +10,8 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "test": "docker run --rm node:14 bash -c 'echo hello | npx github:dlemfh/t'"
+    "now": "node -e 'console.log(new Date().toISOString())'",
+    "test": "docker run --rm -v \"$(pwd)/package.json:/package.json\" node:14 bash -c 'npm run now | npx github:dlemfh/t'"
   },
   "devDependencies": {
     "@types/node": "^16.6.0"
