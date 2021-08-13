@@ -10,6 +10,8 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "test": "docker run -d --rm alpine sh -c 'echo hello; sleep 1; echo .; sleep 1; echo world' | xargs -I {} docker logs -tf {} | node index.js"
+    "test": "docker run -d --rm alpine sh -c 'echo hello; sleep 1; echo .; sleep 1; echo world' | xargs -I {} docker logs -tf {} | node index.js",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
   }
 }
