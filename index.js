@@ -8,13 +8,14 @@ process.stdin.on('data', (data) => {
     const date = new Date(match);
     if (isFinite(date)) {
       return `[${date.toLocaleString('ko-kr', {
+        timeZone: 'Asia/Seoul',
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-      })}]`;
+      })} (KST)]`;
     } else {
       return match;
     }
