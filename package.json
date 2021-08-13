@@ -1,6 +1,6 @@
 {
-  "name": "t",
-  "version": "1.0.0",
+  "name": "@dlemfh/t",
+  "version": "1.0.2",
   "description": "",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   "bin": "index.js",
   "scripts": {
     "now": "node -e 'console.log(new Date().toISOString())'",
-    "test": "docker run --rm -v \"$(pwd)/package.json:/package.json\" node:14 bash -c 'npm run now | npx github:dlemfh/t@latest'",
+    "test": "docker run --rm -v \"$(pwd)/package.json:/package.json\" node:14 bash -c 'npm run now | npx @dlemfh/t'",
     "test:local": "npm run now | node index.js"
   },
   "devDependencies": {
