@@ -1,5 +1,5 @@
-# Usage
+### Usage
 
 ```sh
-docker logs <container-id> -tf | npx tkst
+docker logs <container> -tf | npx tkst
 ```
