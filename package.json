@@ -11,7 +11,7 @@
   "bin": "index.js",
   "scripts": {
     "now": "node -e 'console.log(new Date().toISOString())'",
-    "test": "docker run --rm -v \"$(pwd)/package.json:/package.json\" node:14 bash -c 'npm run now | npx github:dlemfh/t'",
+    "test": "docker run --rm -v \"$(pwd)/package.json:/package.json\" node:14 bash -c 'npm run now | npx github:dlemfh/t@latest'",
     "test:local": "npm run now | node index.js"
   },
   "devDependencies": {
