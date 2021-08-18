@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 'use strict';
 
+const DIM = '\x1b[2m';
+const RESET = '\x1b[0m';
+
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 process.stdin.on('data', (data) => {
   data = data.replace(/\S+/g, (match) => {
     const date = new Date(match);
     if (isFinite(date)) {
-      return `\x1b[2m[${date.toLocaleString('ko-kr', {
+      return `${DIM}[${date.toLocaleString('ko-kr', {
         timeZone: 'Asia/Seoul',
         year: 'numeric',
         month: '2-digit',
@@ -15,7 +18,7 @@ process.stdin.on('data', (data) => {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-      })} (KST)]\x1b[0m`;
+      })} (KST)]${RESET}`;
     } else {
       return match;
     }
