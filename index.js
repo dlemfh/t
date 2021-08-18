@@ -7,7 +7,7 @@ process.stdin.on('data', (data) => {
   data = data.replace(/\S+/g, (match) => {
     const date = new Date(match);
     if (isFinite(date)) {
-      return `[${date.toLocaleString('ko-kr', {
+      return `\x1b[2m[${date.toLocaleString('ko-kr', {
         timeZone: 'Asia/Seoul',
         year: 'numeric',
         month: '2-digit',
@@ -15,7 +15,7 @@ process.stdin.on('data', (data) => {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-      })} (KST)]`;
+      })} (KST)]\x1b[0m`;
     } else {
       return match;
     }
